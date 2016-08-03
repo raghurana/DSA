@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DSA.ConsoleApp.DataStructures
+namespace DSA.ConsoleApp.DataStructures.Implementations
 {
     public class MyDynamicArray<T>
     {

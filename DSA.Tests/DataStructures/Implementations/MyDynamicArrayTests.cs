@@ -1,8 +1,8 @@
 ﻿using System;
-using DSA.ConsoleApp.DataStructures;
+using DSA.ConsoleApp.DataStructures.Implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DSA.Tests.DataStructures
+namespace DSA.Tests.DataStructures.Implementations
 {
     [TestClass]
     public class MyDynamicArrayTests
