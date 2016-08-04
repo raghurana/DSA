@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DSA.ConsoleApp.DataStructures.Implementations
 {
-    public class MyDynamicArray<T>
+    public class SimpleDynamicArray<T>
     {
         private const int DefaultCapacity = 2;
 
@@ -37,7 +37,7 @@ namespace DSA.ConsoleApp.DataStructures.Implementations
 
         public int Count => itemCount;
 
-        public MyDynamicArray()
+        public SimpleDynamicArray()
         {
             items = EmptyArray;
         }

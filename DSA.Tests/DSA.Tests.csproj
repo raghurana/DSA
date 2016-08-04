@@ -59,12 +59,8 @@
     <Compile Include="DataStructures\ApiUsage\HashSetUsageTests.cs" />
     <Compile Include="DataStructures\ApiUsage\LinkedListUsageTests.cs" />
     <Compile Include="DataStructures\ApiUsage\PriorityQueueUsageTests.cs" />
-    <Compile Include="DataStructures\Implementations\MyDynamicArrayTests.cs" />
+    <Compile Include="DataStructures\Implementations\SimpleDynamicArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SupportingClasses\ImmutablePerson.cs" />
-    <Compile Include="SupportingClasses\Person.cs" />
-    <Compile Include="SupportingClasses\PersonAgePriorityComparer.cs" />
-    <Compile Include="SupportingClasses\TestDataMother.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DSA.ConsoleApp\DSA.ConsoleApp.csproj">
