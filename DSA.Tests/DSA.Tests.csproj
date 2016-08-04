@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C5, Version=2.4.5947.17248, Culture=neutral, PublicKeyToken=282361b99ded7e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\C5.2.4.5947.17249\lib\net45\C5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -51,14 +55,19 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DataStructures\ApiUsage\DynamicArrayUsageTests.cs" />
+    <Compile Include="DataStructures\ApiUsage\LinkedListUsageTests.cs" />
     <Compile Include="DataStructures\Implementations\MyDynamicArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupportingClasses\Person.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DSA.ConsoleApp\DSA.ConsoleApp.csproj">
       <Project>{b422de6b-ec4f-442f-a69b-f3a2e64820d6}</Project>
       <Name>DSA.ConsoleApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
