@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DSA.ConsoleApp.SupportingClasses;
 
-namespace DSA.ConsoleApp.DataStructures.Implementations
+namespace DSA.ConsoleApp.Algorithms.Graphs
 {
     public class DepthFirstSearch
     {

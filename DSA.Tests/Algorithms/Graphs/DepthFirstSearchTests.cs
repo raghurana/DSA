@@ -1,8 +1,8 @@
-﻿using DSA.ConsoleApp.DataStructures.Implementations;
+﻿using DSA.ConsoleApp.Algorithms.Graphs;
 using DSA.ConsoleApp.SupportingClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DSA.Tests.DataStructures.Implementations
+namespace DSA.Tests.Algorithms.Graphs
 {
     [TestClass]
     public class DepthFirstSearchTests
