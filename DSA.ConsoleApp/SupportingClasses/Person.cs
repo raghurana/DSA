@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace DSA.Tests.SupportingClasses
+namespace DSA.ConsoleApp.SupportingClasses
 {
     public class Person : IEquatable<Person>
     {

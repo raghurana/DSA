@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DSA.Tests.SupportingClasses
+namespace DSA.ConsoleApp.SupportingClasses
 {
     public class PersonAgePriorityComparer : IComparer<Person>
     {

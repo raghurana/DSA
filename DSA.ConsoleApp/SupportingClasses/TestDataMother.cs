@@ -1,4 +1,4 @@
-﻿namespace DSA.Tests.SupportingClasses
+﻿namespace DSA.ConsoleApp.SupportingClasses
 {
     public static class TestDataMother
     {

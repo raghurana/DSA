@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DSA.Tests.SupportingClasses;
+using DSA.ConsoleApp.SupportingClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DSA.Tests.DataStructures.ApiUsage
