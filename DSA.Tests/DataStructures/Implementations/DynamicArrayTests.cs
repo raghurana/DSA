@@ -5,12 +5,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DSA.Tests.DataStructures.Implementations
 {
     [TestClass]
-    public class SimpleDynamicArrayTests
+    public class DynamicArrayTests
     {
         [TestMethod]
         public void AddTest()
         {
-            var list = new SimpleDynamicArray<string>();
+            var list = new DynamicArray<string>();
             Assert.AreEqual(list.Capacity, 0);
 
             const string testString1 = "Test1";
@@ -45,7 +45,7 @@ namespace DSA.Tests.DataStructures.Implementations
         [TestMethod]
         public void RemoveTest()
         {
-            var list = new SimpleDynamicArray<string>();
+            var list = new DynamicArray<string>();
             Assert.AreEqual(list.Capacity, 0);
 
             const string testString1 = "Test1";
@@ -90,7 +90,7 @@ namespace DSA.Tests.DataStructures.Implementations
             Assert.IsFalse(TryRemoveAt(list, 0));
         }
 
-        private static bool TryRemoveAt(SimpleDynamicArray<string> list, int index)
+        private static bool TryRemoveAt(DynamicArray<string> list, int index)
         {
             try
             {

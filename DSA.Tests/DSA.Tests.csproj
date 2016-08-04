@@ -59,7 +59,8 @@
     <Compile Include="DataStructures\ApiUsage\HashSetUsageTests.cs" />
     <Compile Include="DataStructures\ApiUsage\LinkedListUsageTests.cs" />
     <Compile Include="DataStructures\ApiUsage\PriorityQueueUsageTests.cs" />
-    <Compile Include="DataStructures\Implementations\SimpleDynamicArrayTests.cs" />
+    <Compile Include="DataStructures\Implementations\DepthFirstSearchTests.cs" />
+    <Compile Include="DataStructures\Implementations\DynamicArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

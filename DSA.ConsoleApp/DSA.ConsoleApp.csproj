@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataStructures\Implementations\DFSStackTraversal.cs" />
-    <Compile Include="DataStructures\Implementations\SimpleDynamicArray.cs" />
+    <Compile Include="DataStructures\Implementations\DepthFirstSearch.cs" />
+    <Compile Include="DataStructures\Implementations\DynamicArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupportingClasses\GraphNode.cs" />
     <Compile Include="SupportingClasses\ImmutablePerson.cs" />
     <Compile Include="SupportingClasses\Person.cs" />
     <Compile Include="SupportingClasses\PersonAgePriorityComparer.cs" />
