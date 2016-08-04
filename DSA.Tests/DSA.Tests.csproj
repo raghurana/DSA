@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DataStructures\ApiUsage\DictionaryUsageTests.cs" />
     <Compile Include="DataStructures\ApiUsage\DynamicArrayUsageTests.cs" />
     <Compile Include="DataStructures\ApiUsage\HashSetUsageTests.cs" />
     <Compile Include="DataStructures\ApiUsage\LinkedListUsageTests.cs" />
