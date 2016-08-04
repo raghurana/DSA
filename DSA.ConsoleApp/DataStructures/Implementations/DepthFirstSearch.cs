@@ -90,7 +90,6 @@ namespace DSA.ConsoleApp.DataStructures.Implementations
                 visitedCache.Add(currentNode);
 
                 nodeProcessor.Process(currentNode, currentLevel);
-
                 foreach (var child in currentNode.Children)
                     stack.Push(new Tuple<GraphNode<T>, int>(child, currentLevel + 1));
             }
@@ -99,11 +98,15 @@ namespace DSA.ConsoleApp.DataStructures.Implementations
     
     public class PrintNodeProcessor
     {
+        private const int Indent = 2;
+
         public void Process<T>(GraphNode<T> node, int currentLevel = 0)
         {
-            var printString = node.Value.ToString().PadLeft(3 * currentLevel, ' ');
+            var originalString  = node.Value.ToString();
+            var levelIndent     = (currentLevel * Indent) + originalString.Length;
 
-            Console.WriteLine(printString);
+            // Pad Left requires the total width to be padded for right alignment.
+            Console.WriteLine(originalString.PadLeft(levelIndent, ' '));
         }
     }
 }
