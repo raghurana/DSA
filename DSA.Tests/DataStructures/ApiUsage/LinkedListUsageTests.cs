@@ -7,10 +7,6 @@ namespace DSA.Tests.DataStructures.ApiUsage
     [TestClass]
     public class LinkedListUsageTests
     {
-        private Person TestPerson1 = new Person {Name = "P1", Age = 33};
-        private Person TestPerson2 = new Person {Name = "P2", Age = 55};
-        private Person TestPerson3 = new Person {Name = "P3", Age = 77};
-
         private LinkedList<Person> linkedList;
         
         [TestInitialize]
@@ -19,37 +15,39 @@ namespace DSA.Tests.DataStructures.ApiUsage
             linkedList = new LinkedList<Person>();
         }
             
+        // Worst Case O(1) when the right node is found
         [TestMethod]
         public void AddTest()
         {
-            var node1 = linkedList.AddFirst(TestPerson1);
+            var node1 = linkedList.AddFirst(TestDataMother.TestPerson1);
             
             Assert.AreEqual(1, linkedList.Count);
-            Assert.IsTrue(linkedList.First.Value.Equals(TestPerson1));
-            Assert.IsTrue(linkedList.Last.Value.Equals(TestPerson1));
+            Assert.IsTrue(linkedList.First.Value.Equals(TestDataMother.TestPerson1));
+            Assert.IsTrue(linkedList.Last.Value.Equals(TestDataMother.TestPerson1));
             Assert.IsNull(linkedList.First.Next);
             Assert.IsNull(linkedList.First.Previous);
 
-            linkedList.AddAfter(node1, TestPerson2);
+            linkedList.AddAfter(node1, TestDataMother.TestPerson2);
 
             Assert.AreEqual(2, linkedList.Count);
-            Assert.IsTrue(linkedList.Last.Value.Equals(TestPerson2));
+            Assert.IsTrue(linkedList.Last.Value.Equals(TestDataMother.TestPerson2));
             Assert.IsNull(linkedList.Last.Next);
-            Assert.IsTrue(linkedList.Last.Previous != null && linkedList.Last.Previous.Value.Equals(TestPerson1));
+            Assert.IsTrue(linkedList.Last.Previous != null && linkedList.Last.Previous.Value.Equals(TestDataMother.TestPerson1));
         }
 
+        // Worst Case O(N) 
         [TestMethod]
         public void FindTest()
         {
-            var node1 = linkedList.AddFirst(TestPerson1);
-            var node2 = linkedList.AddAfter(node1, TestPerson2);
-            var node3 = linkedList.AddAfter(node2, TestPerson3);
+            var node1 = linkedList.AddFirst(TestDataMother.TestPerson1);
+            var node2 = linkedList.AddAfter(node1, TestDataMother.TestPerson2);
+            var node3 = linkedList.AddAfter(node2, TestDataMother.TestPerson3);
 
             var foundNode = linkedList.Find(new Person());
 
             Assert.IsNull(foundNode);
 
-            foundNode = linkedList.Find(TestPerson2);
+            foundNode = linkedList.Find(TestDataMother.TestPerson2);
 
             Assert.IsNotNull(foundNode);
             Assert.AreSame(node2.Value, foundNode.Value);
@@ -57,14 +55,15 @@ namespace DSA.Tests.DataStructures.ApiUsage
             Assert.AreSame(node2.Next, foundNode.Next);
         }
 
+        // Worst Case O(1) when the right node is found
         [TestMethod]
         public void RemoveTest()
         {
-            var node1 = linkedList.AddFirst(TestPerson1);
-            var node2 = linkedList.AddAfter(node1, TestPerson2);
-            var node3 = linkedList.AddAfter(node2, TestPerson3);
+            var node1 = linkedList.AddFirst(TestDataMother.TestPerson1);
+            var node2 = linkedList.AddAfter(node1, TestDataMother.TestPerson2);
+            var node3 = linkedList.AddAfter(node2, TestDataMother.TestPerson3);
 
-            var removed = linkedList.Remove(TestPerson2);
+            var removed = linkedList.Remove(TestDataMother.TestPerson2);
 
             Assert.IsTrue(removed);
             Assert.AreSame(node1, linkedList.First);
@@ -72,6 +71,5 @@ namespace DSA.Tests.DataStructures.ApiUsage
             Assert.AreSame(node3, linkedList.First.Next);
         }
     }
-
 
 }
