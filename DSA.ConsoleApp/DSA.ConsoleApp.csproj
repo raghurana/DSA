@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Graphs\DepthFirstSearch.cs" />
+    <Compile Include="Algorithms\Graphs\IGraphTraversalStrategy.cs" />
+    <Compile Include="Algorithms\Graphs\PrintNodeProcessor.cs" />
+    <Compile Include="Algorithms\Graphs\RecursiveDfsStrategy.cs" />
+    <Compile Include="Algorithms\Graphs\StackDfsStrategy.cs" />
     <Compile Include="DataStructures\Implementations\DynamicArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

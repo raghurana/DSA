@@ -11,6 +11,15 @@ namespace DSA.Tests.Algorithms.Graphs
         public void RecursiveTest()
         {
             var dfs = new DepthFirstSearch();
+
+            dfs.Process(TestDataMother.CreateTestGraph());
+        }
+
+        [TestMethod]
+        public void StackTest()
+        {
+            var dfs = new DepthFirstSearch(useRecursiveStratgey: false);
+
             dfs.Process(TestDataMother.CreateTestGraph());
         }
     }
