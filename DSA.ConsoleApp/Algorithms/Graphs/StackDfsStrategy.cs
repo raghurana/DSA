@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DSA.ConsoleApp.SupportingClasses;
 
 namespace DSA.ConsoleApp.Algorithms.Graphs
 {
     public class StackDfsStrategy<T> : BaseGraphTraversalStrategy<T>
     {
-        private readonly Stack<Tuple<GraphNode<T>, int>> stack = new Stack<Tuple<GraphNode<T>, int>>();
+        private readonly Stack<LevelGraphNode<T>> stack = new Stack<LevelGraphNode<T>>();
 
         public StackDfsStrategy(PrintNodeProcessor nodeProcessor)
             : base(nodeProcessor)
@@ -17,30 +16,24 @@ namespace DSA.ConsoleApp.Algorithms.Graphs
             stack.Clear();
             VisitedCache.Clear();
 
-            stack.Push(CreateNodeTuple(startNode, 0));
+            stack.Push(CreateLevelNode(startNode, 0));
 
             while (stack.Count > 0)
             {
-                var topNodeTuple = stack.Pop();
-
-                var topNode      = topNodeTuple.Item1;
-                var topNodeLevel = topNodeTuple.Item2;
-
+                var topNode = stack.Pop();
                 if (VisitedCache.Contains(topNode))
                     continue;
 
                 VisitedCache.Add(topNode);
-
-                NodeProcessor.Process(topNode, topNodeLevel);
-
+                NodeProcessor.Process(topNode, topNode.Level);
                 foreach (var child in topNode.Children)
-                    stack.Push(CreateNodeTuple(child, topNodeLevel + 1));
+                    stack.Push(CreateLevelNode(child, topNode.Level + 1));
             }
         }
 
-        private static Tuple<GraphNode<T>, int> CreateNodeTuple(GraphNode<T> node, int level)
+        private static LevelGraphNode<T> CreateLevelNode(GraphNode<T> node, int level)
         {
-            return new Tuple<GraphNode<T>, int>(node, level);
+            return new LevelGraphNode<T>(node, level);
         }
     }
 }
