@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DSA.ConsoleApp.Algorithms.QuickSort
+namespace DSA.ConsoleApp.Algorithms.DivideAndConquer
 {
     public static class QuickSortAlgo
     {

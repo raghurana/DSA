@@ -1,8 +1,8 @@
-﻿using DSA.ConsoleApp.Algorithms.QuickSort;
+﻿using DSA.ConsoleApp.Algorithms.DivideAndConquer;
 using DSA.ConsoleApp.SupportingClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DSA.Tests.Algorithms.QuickSort
+namespace DSA.Tests.Algorithms.DivideAndConquer
 {
     [TestClass]
     public class QuickSortAlgoTests
