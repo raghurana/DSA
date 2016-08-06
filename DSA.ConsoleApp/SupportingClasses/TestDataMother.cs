@@ -1,4 +1,6 @@
-﻿namespace DSA.ConsoleApp.SupportingClasses
+﻿using System.Collections.Generic;
+
+namespace DSA.ConsoleApp.SupportingClasses
 {
     public static class TestDataMother
     {
@@ -35,5 +37,7 @@
             frozen.AddChild(main); // Introduce a "cycle" (even though it is meaningless here)
             return main;
         }
+
+        public static readonly List<int> UnsortedArray = new List<int> {4, 1, 2, 6, 7, 10, 3, 5, 9, 8};
     }
 }
