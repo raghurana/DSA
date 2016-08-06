@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DSA.ConsoleApp.SupportingClasses;
 
-namespace DSA.ConsoleApp.Algorithms.Graphs
+namespace DSA.ConsoleApp.Algorithms.GraphTraversal
 {
     public class QueueBfsStrategy<T> : IGraphTraversalStrategy<T>
     {

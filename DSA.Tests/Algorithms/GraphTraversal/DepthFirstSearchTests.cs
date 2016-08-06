@@ -1,8 +1,8 @@
-﻿using DSA.ConsoleApp.Algorithms.Graphs;
+﻿using DSA.ConsoleApp.Algorithms.GraphTraversal;
 using DSA.ConsoleApp.SupportingClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DSA.Tests.Algorithms.Graphs
+namespace DSA.Tests.Algorithms.GraphTraversal
 {
     [TestClass]
     public class DepthFirstSearchTests
