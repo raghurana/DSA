@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\DynamicProgramming\CachedFibonacci.cs" />
     <Compile Include="Algorithms\GraphTraversal\BreadthFirstSearch.cs" />
     <Compile Include="Algorithms\GraphTraversal\DepthFirstSearch.cs" />
     <Compile Include="Algorithms\GraphTraversal\IGraphTraversalStrategy.cs" />

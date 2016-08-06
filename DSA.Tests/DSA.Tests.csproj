@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Algorithms\DynamicProgramming\CachedFibonacciTests.cs" />
     <Compile Include="Algorithms\GraphTraversal\BreadthFirstSearchTests.cs" />
     <Compile Include="Algorithms\DivideAndConquer\QuickSortAlgoTests.cs" />
     <Compile Include="DataStructures\ApiUsage\DictionaryUsageTests.cs" />
