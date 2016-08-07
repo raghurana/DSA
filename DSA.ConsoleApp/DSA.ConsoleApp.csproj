@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\DynamicProgramming\CachedFibonacci.cs" />
+    <Compile Include="Algorithms\DynamicProgramming\ZeroOneKnapsack.cs" />
     <Compile Include="Algorithms\GraphTraversal\BreadthFirstSearch.cs" />
     <Compile Include="Algorithms\GraphTraversal\DepthFirstSearch.cs" />
     <Compile Include="Algorithms\GraphTraversal\IGraphTraversalStrategy.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupportingClasses\GraphNode.cs" />
     <Compile Include="SupportingClasses\ImmutablePerson.cs" />
+    <Compile Include="SupportingClasses\KnapsackItem.cs" />
     <Compile Include="SupportingClasses\Person.cs" />
     <Compile Include="SupportingClasses\PersonAgePriorityComparer.cs" />
     <Compile Include="SupportingClasses\TestDataMother.cs" />
