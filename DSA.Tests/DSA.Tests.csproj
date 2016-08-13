@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Algorithms\BranchAndBound\AssignmentProblemSolverTests.cs" />
     <Compile Include="Algorithms\DynamicProgramming\CachedFibonacciTests.cs" />
     <Compile Include="Algorithms\DynamicProgramming\ZeroOneKnapsackTests.cs" />
     <Compile Include="Algorithms\GraphTraversal\BreadthFirstSearchTests.cs" />
