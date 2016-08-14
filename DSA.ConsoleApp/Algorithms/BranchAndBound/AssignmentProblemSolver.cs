@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using C5;
 using DSA.ConsoleApp.SupportingClasses;
 
 namespace DSA.ConsoleApp.Algorithms.BranchAndBound
@@ -37,9 +39,12 @@ namespace DSA.ConsoleApp.Algorithms.BranchAndBound
             while (!queue.IsEmpty)
             {
                 var candidate = queue.DeleteMin();
+                Debug.WriteLine($"Considering Candidate: {candidate}");
 
                 for (var task = 0; task < numTasks; task++)
                 {
+                    PrintQueue(queue);
+
                     if (!candidate.TaskAssignments.Contains(task))
                     {
                         var branchNode = (BnBSolutionCandidate) candidate.Clone();
@@ -77,6 +82,16 @@ namespace DSA.ConsoleApp.Algorithms.BranchAndBound
                 lowerBound += minimumCosts[agent];
 
             return lowerBound;
+        }
+
+        private void PrintQueue(IntervalHeap<BnBSolutionCandidate> queue)
+        {
+            foreach (var bnBSolutionCandidate in queue)
+            {
+                Console.WriteLine(bnBSolutionCandidate);
+                Debug.WriteLine(bnBSolutionCandidate);
+            }
+                
         }
     }
 }

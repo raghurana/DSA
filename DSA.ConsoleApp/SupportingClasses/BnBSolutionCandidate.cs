@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DSA.ConsoleApp.SupportingClasses
 {
@@ -23,6 +24,11 @@ namespace DSA.ConsoleApp.SupportingClasses
         public object Clone()
         {
             return new BnBSolutionCandidate(LowerBound, new List<int>(TaskAssignments));
+        }
+
+        public override string ToString()
+        {
+            return $"LB:{LowerBound} Tasks:[{string.Join(",", TaskAssignments)}]";
         }
     }
 }
