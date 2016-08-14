@@ -45,20 +45,20 @@ namespace DSA.ConsoleApp.Algorithms.BranchAndBound
                 {
                     PrintQueue(queue);
 
-                    if (!candidate.TaskAssignments.Contains(task))
-                    {
-                        var branchNode = (BnBSolutionCandidate) candidate.Clone();
-                        branchNode.TaskAssignments.Add(task);
-                        branchNode.LowerBound = CalculateLowerBound(branchNode);
+                    if (candidate.TaskAssignments.Contains(task))
+                        continue;
 
-                        if (branchNode.LowerBound >= bestSolution.LowerBound)
-                            continue;
+                    var branchNode = (BnBSolutionCandidate) candidate.Clone();
+                    branchNode.TaskAssignments.Add(task);
+                    branchNode.LowerBound = CalculateLowerBound(branchNode);
 
-                        if (branchNode.TaskAssignments.Count == numTasks)
-                            bestSolution = branchNode;
-                        else
-                            queue.Add(branchNode);
-                    }
+                    if (branchNode.LowerBound >= bestSolution.LowerBound)
+                        continue;
+
+                    if (branchNode.TaskAssignments.Count == numTasks)
+                        bestSolution = branchNode;
+                    else
+                        queue.Add(branchNode);
                 }
             }
 
