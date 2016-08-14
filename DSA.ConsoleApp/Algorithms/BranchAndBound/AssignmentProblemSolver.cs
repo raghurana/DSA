@@ -24,15 +24,15 @@ namespace DSA.ConsoleApp.Algorithms.BranchAndBound
         public List<int> SolveAssignmentProblem(out int solutionValue)
         {
             // Find a best guestimate solution by traversing diagonally 
-            var bestSolution = new BnBSolutionCandidate { TasksAssignments = new List<int>() };
+            var bestSolution = new BnBSolutionCandidate();
             for (var task = 0; task < numTasks; task++)
             {
-                bestSolution.TasksAssignments.Add(task);
+                bestSolution.TaskAssignments.Add(task);
                 bestSolution.LowerBound += costMatrix[task, task];
             }
 
             // Add empty solution as the starting point
-            var queue = new C5.IntervalHeap<BnBSolutionCandidate> {new BnBSolutionCandidate { TasksAssignments = new List<int>() }};
+            var queue = new C5.IntervalHeap<BnBSolutionCandidate> {new BnBSolutionCandidate()};
 
             while (!queue.IsEmpty)
             {
@@ -40,16 +40,16 @@ namespace DSA.ConsoleApp.Algorithms.BranchAndBound
 
                 for (var task = 0; task < numTasks; task++)
                 {
-                    if (!candidate.TasksAssignments.Contains(task))
+                    if (!candidate.TaskAssignments.Contains(task))
                     {
                         var branchNode = (BnBSolutionCandidate) candidate.Clone();
-                        branchNode.TasksAssignments.Add(task);
+                        branchNode.TaskAssignments.Add(task);
                         branchNode.LowerBound = CalculateLowerBound(branchNode);
 
                         if (branchNode.LowerBound >= bestSolution.LowerBound)
                             continue;
 
-                        if (branchNode.TasksAssignments.Count == numTasks)
+                        if (branchNode.TaskAssignments.Count == numTasks)
                             bestSolution = branchNode;
                         else
                             queue.Add(branchNode);
@@ -58,7 +58,7 @@ namespace DSA.ConsoleApp.Algorithms.BranchAndBound
             }
 
             solutionValue = bestSolution.LowerBound;
-            return bestSolution.TasksAssignments;
+            return bestSolution.TaskAssignments;
         }
 
         private int CalculateLowerBound(BnBSolutionCandidate branchNode)
@@ -66,14 +66,14 @@ namespace DSA.ConsoleApp.Algorithms.BranchAndBound
             var lowerBound = 0;
 
             // Sum costs for tasks that already have a fixed agent.
-            for (int agent = 0; agent < branchNode.TasksAssignments.Count; agent++)
+            for (int agent = 0; agent < branchNode.TaskAssignments.Count; agent++)
             {
-                var assignedTask = branchNode.TasksAssignments[agent];
+                var assignedTask = branchNode.TaskAssignments[agent];
                 lowerBound += costMatrix[agent, assignedTask];
             }
 
             // Sum minimum costs of the remaining agents.
-            for (int agent = branchNode.TasksAssignments.Count; agent < numAgents; agent++)
+            for (int agent = branchNode.TaskAssignments.Count; agent < numAgents; agent++)
                 lowerBound += minimumCosts[agent];
 
             return lowerBound;

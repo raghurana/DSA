@@ -3,26 +3,26 @@ using System.Collections.Generic;
 
 namespace DSA.ConsoleApp.SupportingClasses
 {
-    public class BnBSolutionCandidate : IComparable, ICloneable
+    public class BnBSolutionCandidate : IComparable<BnBSolutionCandidate>, ICloneable
     {
-        public int LowerBound;
+        public int LowerBound { get; set; }
 
-        public List<int> TasksAssignments;
+        public List<int> TaskAssignments { get; }
 
-        public int CompareTo(object obj)
+        public BnBSolutionCandidate(int lowerBound = 0, List<int> taskAssignments = null)
         {
-            return LowerBound.CompareTo(((BnBSolutionCandidate)obj).LowerBound);
+            LowerBound      = lowerBound;
+            TaskAssignments = taskAssignments ?? new List<int>();
+        }
+
+        public int CompareTo(BnBSolutionCandidate other)
+        {
+            return LowerBound.CompareTo(other?.LowerBound);
         }
 
         public object Clone()
         {
-            var clone = new BnBSolutionCandidate
-            {
-                LowerBound = this.LowerBound,
-                TasksAssignments = new List<int>(TasksAssignments)
-            };
-
-            return clone;
+            return new BnBSolutionCandidate(LowerBound, new List<int>(TaskAssignments));
         }
     }
 }
